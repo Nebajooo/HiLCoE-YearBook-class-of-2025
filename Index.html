@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>🎓Yearbook - Class of 2025 , HiLCoE</title>
+    <link rel="icon" type="image/png" href="images/l1.jpeg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      #splash {
+        position: fixed;
+        inset: 0;
+        background: linear-gradient(135deg, #1e3a8a, #000000);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 9999;
+        animation: fadeOut 1s ease-in-out forwards;
+        animation-delay: 4s;
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .star {
+        position: absolute;
+        background: rgb(255, 255, 255);
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: twinkle 3s infinite;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.9;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.3;
+          transform: scale(0.5);
+        }
+      }
+
+      .grad-icon {
+        font-size: 4rem;
+        animation: bounce 2s infinite ease-in-out;
+        margin-bottom: 20px;
+        text-shadow: 0 0 10px gold;
+      }
+
+      @media (min-width: 640px) {
+        .grad-icon {
+          font-size: 5rem;
+        }
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .welcome-text {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+        max-width: 90%;
+        text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      @media (min-width: 640px) {
+        .welcome-text {
+          font-size: 2.5rem;
+        }
+      }
+
+      .caption {
+        margin-top: 10px;
+        font-size: 1.1rem;
+        color: #e0f2fe;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800 overflow-y-auto">
+    <!-- Splash Screen -->
+    <div id="splash">
+      <div class="stars" id="stars"></div>
+      <div class="grad-icon">🎓</div>
+      <div class="welcome-text">
+        Welcome to the HiLCoE Yearbook<br />Class of 2025
+      </div>
+      <div class="caption">A future full of code, dreams, and memes 🤓💻✨</div>
+    </div>
+
+    <!-- Header -->
+    <header
+      class="flex flex-col md:flex-row items-center justify-between p-4 bg-white shadow-md space-y-4 md:space-y-0"
+    >
+      <!-- Full-size Logo -->
+      <img src="images/OIP.webp" alt="School Logo" />
+
+      <!-- Header Text and Video -->
+      <div class="flex flex-col items-center md:items-end space-y-2">
+        <h1
+          class="text-xl sm:text-2xl md:text-3xl font-bold text-blue-700 text-center"
+        >
+          Code like a rockstar🎸, debug like a detective🕵️‍♂️.
+        </h1>
+        <video
+          src="videos/v1.mp4"
+          autoplay
+          muted
+          loop
+          playsinline
+          class="w-40 h-24 md:w-56 md:h-32 rounded-lg shadow-lg object-cover"
+        ></video>
+      </div>
+    </header>
+
+    <!-- Collage Section -->
+    <section class="bg-blue-50 py-8 shadow-inner">
+      <h2 class="text-xl text-blue-700 text-center mb-4 font-semibold">
+        Our Memories Together 🎓
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4 px-4">
+        <img
+          src="images/students/p4.jpeg"
+          class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 object-cover rounded-xl shadow-md"
+        />
+        <img
+          src="images/students/p5.jpeg"
+          class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 object-cover rounded-xl shadow-md"
+        />
+        <img
+          src="images/students/p6.jpeg"
+          class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 object-cover rounded-xl shadow-md"
+        />
+        <img
+          src="images/students/p4.jpeg"
+          class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 object-cover rounded-xl shadow-md"
+        />
+        <img
+          src="images/students/p5.jpeg"
+          class="w-24 sm:w-28 md:w-32 h-24 sm:h-28 md:h-32 object-cover rounded-xl shadow-md"
+        />
+      </div>
+    </section>
+
+    <!-- Main Title -->
+    <div class="text-center py-8 bg-white shadow-md">
+      <h1 class="text-4xl font-bold text-blue-600">Class of 2025</h1>
+      <p class="text-gray-600">Congratulations to all graduates!</p>
+    </div>
+
+    <!-- Search Input -->
+    <div class="max-w-xl mx-auto px-4 pb-4">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by name..."
+        class="w-full p-3 text-sm sm:text-base border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400"
+      />
+    </div>
+
+    <!-- Student Cards -->
+    <div
+      id="card-container"
+      class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+    ></div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center gap-4 pb-10">
+      <button
+        id="prev"
+        class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400 disabled:opacity-50"
+      >
+        Previous
+      </button>
+      <span id="pageInfo" class="text-sm text-gray-600"></span>
+      <button
+        id="next"
+        class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+      >
+        Next
+      </button>
+    </div>
+
+    <!-- YouTube Video -->
+    <div class="max-w-4xl mx-auto px-4 pb-12">
+      <h2 class="text-2xl font-semibold text-center mb-4 text-blue-700">
+        🎥 Graduation Memories
+      </h2>
+      <div class="relative w-full pb-[56.25%] h-0">
+        <iframe
+          class="absolute top-0 left-0 w-full h-full rounded-lg shadow-lg"
+          src="https://www.youtube.com/embed/VexynUlEcUg"
+          title="Graduation Video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-blue-600 text-white">
+      <p>© 2025 HiLCoE | All Rights Reserved</p>
+      Neba
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      const students = [
+        {
+          name: "Abebe Kebede1",
+          career: "Software Engineer",
+          img: "images/students/p4.jpeg",
+          quote: "Code hard, crash harder. 💻🔥",
+        },
+        {
+          name: "Sara Mekonnen",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "Scalpel in one hand, dreams in the other. 🩺🌟",
+        },
+        {
+          name: "Yohannes Desta",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Helen Tadesse",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Daniel Fikru",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Marta Yilma",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Samuel Worku",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Ruth Alemu",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Mekdes Lemma",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Abebe Kebede2",
+          career: "Software Engineer",
+          img: "images/students/p4.jpeg",
+          quote: "Code hard, crash harder. 💻🔥",
+        },
+        {
+          name: "Sara Mekonnen",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "Scalpel in one hand, dreams in the other. 🩺🌟",
+        },
+        {
+          name: "Yohannes Desta",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Helen Tadesse",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Daniel Fikru",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Marta Yilma",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Samuel Worku",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Ruth Alemu",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Mekdes Lemma",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Abebe Kebede3",
+          career: "Software Engineer",
+          img: "images/students/p4.jpeg",
+          quote: "Code hard, crash harder. 💻🔥",
+        },
+        {
+          name: "Sara Mekonnen",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "Scalpel in one hand, dreams in the other. 🩺🌟",
+        },
+        {
+          name: "Yohannes Desta",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Helen Tadesse",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Daniel Fikru",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Marta Yilma",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Samuel Worku",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Ruth Alemu",
+          career: "Software Engineer",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Mekdes Lemma",
+          career: "Software Engineer",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p4.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p5.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+        {
+          name: "Bereket Haile",
+          career: "Computer Science",
+          img: "images/students/p6.jpeg",
+          quote: "In data we trust. 📊🧠",
+        },
+      ];
+
+      const perPage = 12;
+      let currentPage = 1;
+      let filteredStudents = [...students];
+
+      const container = document.getElementById("card-container");
+      const prevBtn = document.getElementById("prev");
+      const nextBtn = document.getElementById("next");
+      const pageInfo = document.getElementById("pageInfo");
+
+      function renderCards() {
+        container.innerHTML = "";
+
+        const start = (currentPage - 1) * perPage;
+        const end = start + perPage;
+        const pageData = filteredStudents.slice(start, end);
+
+        if (pageData.length === 0) {
+          container.innerHTML = `<p class="text-center text-red-600 font-semibold text-lg">No students found.</p>`;
+          pageInfo.textContent = "";
+          prevBtn.disabled = true;
+          nextBtn.disabled = true;
+          return;
+        }
+
+        pageData.forEach((student) => {
+          const card = document.createElement("div");
+          card.className =
+            "bg-white rounded-xl shadow-md p-4 text-center opacity-0 transform transition duration-500 scale-95 relative";
+
+          card.innerHTML = `
+            <div class="relative inline-block mx-auto mb-4 group cursor-pointer">
+              <img
+                src="${student.img}"
+                alt="${student.name}"
+                class="w-32 h-32 rounded-full object-cover"
+              />
+              <img
+                src="${student.img}"
+                alt="Preview of ${student.name}"
+                class="absolute left-1/2 -top-48 w-64 h-64 rounded-xl object-cover shadow-lg opacity-0 pointer-events-none
+                       transform -translate-x-1/2 scale-90 transition-all duration-300 ease-in-out
+                       group-hover:opacity-100 group-hover:pointer-events-auto group-hover:scale-100 z-50"
+              />
+            </div>
+            <h2 class="text-lg font-semibold">${student.name}</h2>
+            <p class="text-sm text-gray-600">${student.career}</p>
+            <p class="text-sm text-blue-600 mt-1">${student.quote || ""}</p>
+          `;
+          container.appendChild(card);
+          requestAnimationFrame(() => {
+            card.classList.remove("opacity-0", "scale-95");
+            card.classList.add("opacity-100", "scale-100");
+          });
+        });
+
+        const totalPages = Math.ceil(filteredStudents.length / perPage);
+        pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+      }
+
+      prevBtn.addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          renderCards();
+        }
+      });
+
+      nextBtn.addEventListener("click", () => {
+        const totalPages = Math.ceil(filteredStudents.length / perPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          renderCards();
+        }
+      });
+
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        const query = e.target.value.toLowerCase();
+        filteredStudents = students.filter((s) =>
+          s.name.toLowerCase().includes(query)
+        );
+        currentPage = 1;
+        renderCards();
+      });
+
+      renderCards();
+
+      // Splash screen fadeout logic
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          document.getElementById("splash").style.display = "none";
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
